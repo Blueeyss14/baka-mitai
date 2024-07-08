@@ -1,0 +1,44 @@
+Column(
+          children: [
+            const SizedBox(height: 50),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                // color: Colors.amber,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text("Flutter",
+                            style: TextStyle(
+                                fontSize: 48, fontWeight: FontWeight.bold)),
+                        Transform.translate(
+                          offset: const Offset(0, -10),
+                          child: const Text("Living Room",
+                              style: TextStyle(
+                                  fontSize: 48, fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    ),
+                    const Icon(Icons.menu)
+                  ],
+                ),
+              ),
+            ),
+            GridView.count(
+              crossAxisCount: 2,
+              children: List.generate(toggleSwitch.length, (index) {
+                return Container(
+                  height: 200,
+                  width: 200,
+                  child: CupertinoSwitch(
+                    value: toggleSwitch[index],
+                    onChanged: (value) {},
+                  ),
+                );
+              }),
+            )
+          ],
+        ),
